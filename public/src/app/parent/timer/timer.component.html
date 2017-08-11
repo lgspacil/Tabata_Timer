@@ -1,0 +1,20 @@
+<button (click)="back()">Back</button>
+<img src="../assets/images/speaker.png" (click)="stop_audio()">
+
+<!-- <h1 class="action_banner">{{action}}</h1> -->
+<div class="container" [class.workClass]="work_screen" [class.restClass]="rest_screen" [class.prepareClass]="prepare_screen">
+	<h1>{{action}}</h1>
+	<h1><b>{{numbers.work}}</b></h1>
+	<div id="controls" align="center">
+		<button id= "pause" (click)="startPause()" *ngIf="running == true"><b id="pause">Pause</b></button>
+		<button id= "start" (click)="startPause()" *ngIf="running == false"><b id="start">Start</b></button>
+		
+	</div>
+
+	<div id="bottom_bar">
+		<div id="cycles"><h2>Cycles</h2><h2>{{numbers.cycles}}/{{original.original_cycles}}</h2></div>
+		<div id="tabatas"><h2>Tabatas</h2><h2>{{numbers.tabatas}}/{{original.original_tabatas}}</h2></div>
+	</div>
+	
+	<p class="total_time">Total Time: {{shown_total_time}}</p>
+</div>

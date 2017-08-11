@@ -1,0 +1,20 @@
+<div class="parent_wrapper">
+
+    <h1 class="header">Time in seconds</h1>
+    <div class="tabata_form">
+        <form *ngIf="show_timer == false">
+            <div class="a">Work: <input type="text" name="work" class="work" [(ngModel)]="form_info.work"></div>
+           <div class="a"> Rest: <input type="text" name="rest" class="rest" [(ngModel)]="form_info.rest"><br></div>
+           <div class="a"> Cycles: <input type="text" name="cycles" class="cycles" [(ngModel)]="form_info.cycles"><br></div>
+            <div class="a">Tabatas: <input type="text" name="tabatas" class="tabatas" [(ngModel)]="form_info.tabatas"><br></div>
+           <div class="a"> Prepare: <input type="text" name="prepare" class="prepare" [(ngModel)]="form_info.prepare"><br></div>
+            <input (click)="tabataForm()" value="Submit" class="submit" type="submit">
+        </form>
+    </div>
+
+
+
+  <app-timer *ngIf="show_timer == true" [numbers]="form_info" [original]="original_nums"></app-timer>   
+
+
+</div>

@@ -1,0 +1,78 @@
+body {
+  background-color: #e6e6e6;
+ }
+ h1 {
+  font-size: 4.5em;
+ }
+h2{
+  font-size: 43px;
+}
+
+ button {
+  font-size: 30px;
+  width: 140px;
+  height: 60px;
+  border-radius: 5px;
+}
+img{
+  height: 61px;
+}
+
+#start{
+  background-color: green;
+  border-color: green;
+}
+
+#pause{
+  background-color: red;
+  border-color: red;
+}
+
+
+.container {
+  margin: auto;
+  margin-top: 40px;
+  width: 650px;
+  height: 490px;
+  text-align: center;
+}
+#controls {
+  margin-left: 52px;
+  width: 500px;
+  height:70px;
+}
+
+#bottom_bar{
+  display: inline-block;
+  
+}
+#cycles{
+  display: inline-block;
+  margin-right: 211px;
+
+}
+#tabatas{
+  
+  display: inline-block;
+}
+
+.action_banner{
+  text-align: center;
+}
+
+.workClass{
+  background-color: #822323;
+}
+
+.restClass{
+  background-color: #4d5aa6;
+}
+
+.prepareClass{
+  background-color: #cfe564
+}
+
+.total_time{
+  font-size: 30px;
+  margin-top: 34px;
+}

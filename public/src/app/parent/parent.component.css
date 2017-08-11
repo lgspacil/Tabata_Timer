@@ -1,0 +1,77 @@
+h1{
+    text-align: center;
+}
+
+.tabata_form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    background-color: #222220;
+    color: white;
+    margin-top: 10px;
+}
+
+.work{
+    background-color: red;
+    height: 100px;
+    width: 75%;
+    text-align: center;
+    font-size: 50px;
+    margin: 0 auto;
+}
+
+.rest{
+    background-color: green;
+    height: 100px;
+    width: 75%;
+    text-align: center;
+    font-size: 50px;
+}
+
+.cycles{
+    background-color: #255a48;
+    height: 100px;
+    width: 75%;
+    text-align: center;
+    font-size: 50px;
+}
+
+.tabatas{
+    background-color: darkgray;
+    height: 100px;
+    width: 75%;
+    text-align: center;
+    font-size: 50px;
+}
+
+.prepare{
+    background-color: lightblue;
+    height: 100px;
+    width: 75%;
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.submit{
+    background-color: lawngreen;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+}
+
+.a{
+    font-size: 25px;
+    margin: auto;
+    text-align: right;
+    margin-right: 157px;
+    
+
+}
+
+.header{
+    margin-bottom: 20px;
+}
