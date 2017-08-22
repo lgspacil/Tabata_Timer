@@ -78,8 +78,7 @@ export class TimerComponent implements OnInit {
     if(this.running == false){
       this.running = true;
       this.audio_starting_session.play();
-      this.audio_axwell.play();
-      this.playing = true;
+      // this.playing = true;
       this.decrement();
 
     }else{
@@ -188,7 +187,7 @@ export class TimerComponent implements OnInit {
     this._router.navigate(['/back']);
   }
 
-  stop_audio(){
+  stop_start_audio(){
     if(this.playing == true){
       this.audio_axwell.pause();
       this.playing = false;

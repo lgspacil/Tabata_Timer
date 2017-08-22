@@ -1,5 +1,6 @@
 <button (click)="back()">Back</button>
-<img src="../assets/images/speaker.png" (click)="stop_audio()">
+<img *ngIf="playing == false" src="../assets/images/speaker_off.png" (click)="stop_start_audio()">
+<img *ngIf="playing == true" src="../assets/images/speaker.png" (click)="stop_start_audio()">
 
 <!-- <h1 class="action_banner">{{action}}</h1> -->
 <div class="container" [class.workClass]="work_screen" [class.restClass]="rest_screen" [class.prepareClass]="prepare_screen">
