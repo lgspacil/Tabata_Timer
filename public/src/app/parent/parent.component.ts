@@ -41,4 +41,8 @@ export class ParentComponent implements OnInit {
     this.show_timer = true;
   }
 
+  backButtonClicked(event){
+    this.show_timer = false;
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class TimerComponent implements OnInit {
   @Input() original;
   @Input() numbers;
+  @Output() backButtonClicked = new EventEmitter();
 
   constructor(private _router: Router) { }
 
@@ -184,7 +185,26 @@ export class TimerComponent implements OnInit {
   }
 
   back(){
-    this._router.navigate(['/back']);
+    if(this.playing == true){
+      this.audio_axwell.pause();
+      this.audio_axwell.currentTime = 0;
+    }else{
+      this.audio_axwell.currentTime = 0;
+    }
+    
+    //back button pressed and the time is still running. 
+    //pause the timer and reset the times to original.
+    if(this.running == true){
+      clearInterval(this.interval);
+    }
+
+    this.numbers.work = this.original.original_work;
+    this.numbers.rest = this.original.original_rest;
+    this.numbers.cycles = this.original.original_cycles;
+    this.numbers.tabatas = this.original.original_tabatas;
+    
+    this.backButtonClicked.emit(false);
+
   }
 
   stop_start_audio(){

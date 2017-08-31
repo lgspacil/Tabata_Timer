@@ -5,7 +5,6 @@ import { ParentComponent } from "app/parent/parent.component";
 
 const routes: Routes = [
   {path: '', component: ParentComponent},
-  {path: 'back', component: ParentComponent}
 ];
 
 @NgModule({

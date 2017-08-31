@@ -1,4 +1,4 @@
-<div class="parent_wrapper">
+<div class="parent_wrapper" >
 
     <h1 class="header">Time in seconds</h1>
     <div class="tabata_form">
@@ -14,7 +14,6 @@
 
 
 
-  <app-timer *ngIf="show_timer == true" [numbers]="form_info" [original]="original_nums"></app-timer>   
-
+  <app-timer *ngIf="show_timer == true" [numbers]="form_info" [original]="original_nums" (backButtonClicked)="backButtonClicked($event)"></app-timer>   
 
 </div>
