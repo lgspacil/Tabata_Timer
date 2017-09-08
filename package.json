@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular-cookies": "^1.6.5",
+    "angular2-cookie": "^1.2.6",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.6"

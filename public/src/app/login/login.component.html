@@ -1,0 +1,63 @@
+{{loginObj | json}}
+{{registerObj | json}}
+
+<div class="container">
+
+  <h1 class="title">Tabata Workout</h1>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#login">Login</button>
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#register">Register</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="login" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login Page</h4>
+        </div>
+        <div class="modal-body">
+          Email: <input type="text" name="name" [(ngModel)]="loginObj.email">
+          Name: <input type="text" name="name" [(ngModel)]="loginObj.name">
+          Password: <input type="text" name="password" [(ngModel)]="loginObj.password">
+          <input type="submit" value="Submit" (click)="loginSubmit()">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="register" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Register Pager</h4>
+          </div>
+          <div class="modal-body">
+            Email: <input type="text" name="email" [(ngModel)]="registerObj.email">
+            Name: <input type="text" name="name" [(ngModel)]="registerObj.name">
+            Password: <input type="text" name="password" [(ngModel)]="registerObj.password">
+            Weight: <input type="text" name="weight" [(ngModel)]="registerObj.weight">
+            <input type="submit" value="Submit" (click)="registerUser()">
+          </div>
+
+          <div *ngIf="errors" class="errors">{{errors}}</div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+</div>

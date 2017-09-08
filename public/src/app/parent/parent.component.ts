@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 
 @Component({
   selector: 'app-parent',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
 
   constructor() { }
+
 
   form_info = {
     work: 20,

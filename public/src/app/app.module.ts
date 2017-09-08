@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -9,13 +10,20 @@ import { HttpModule } from '@angular/http';
 
 import { ParentComponent } from './parent/parent.component';
 import { TimerComponent } from "app/parent/timer/timer.component";
+import { LoginComponent } from './login/login.component';
+import { CookieService } from 'angular2-cookie/services/cookies.service'
+import { HttpService } from "app/http.service";
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TimerComponent,
-    ParentComponent
+    ParentComponent,
+    LoginComponent,
+    
   ],
   imports: [
     FormsModule,
@@ -23,7 +31,7 @@ import { TimerComponent } from "app/parent/timer/timer.component";
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CookieService, HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
