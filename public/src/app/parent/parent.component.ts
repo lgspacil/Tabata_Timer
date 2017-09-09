@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { CookieService } from "angular2-cookie/services/cookies.service";
 
 
 @Component({
@@ -8,7 +9,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 
-  constructor() { }
+  //user info stored in the cookie:
+  name = this._cookieService.get('name');
+  user_id = this._cookieService.get('user_id');
+
+  constructor(private _cookieService:CookieService) { }
 
 
   form_info = {

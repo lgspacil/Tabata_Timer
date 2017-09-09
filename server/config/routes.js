@@ -7,10 +7,22 @@ var workouts = require('../controllers/workouts.js')
 
 
 module.exports = function (app){
+    //users//
     app.post('/add_user', function(req, res){
         users.add_user(req, res);
     })
     
-    
+    app.post('/login', function(req, res){
+        users.login(req, res);
+    })
+
+    //workours
+    app.post('/inputWorkout', function(req, res){
+        workouts.inputWorkout(req, res);
+    })
+
+    app.post('/loadAllWorkouts', function(req, res){
+        workouts.loadAllWorkouts(req, res);
+    })
 
 }

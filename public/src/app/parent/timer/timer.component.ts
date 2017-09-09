@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
+import { HttpService } from "app/http.service";
+import { CookieService } from "angular2-cookie/services/cookies.service";
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +13,12 @@ export class TimerComponent implements OnInit {
   @Input() numbers;
   @Output() backButtonClicked = new EventEmitter();
 
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, private _httpService: HttpService, private _cookieService:CookieService) { }
+  @ViewChild('openResults') openResults:ElementRef
+
+  //user info stored in the cookie:
+  name = this._cookieService.get('name');
+  user_id = this._cookieService.get('user_id');
 
   someProperty = true;
 
@@ -50,9 +57,12 @@ export class TimerComponent implements OnInit {
   audio_starting_session = new Audio();
   audio_stopping_session = new Audio();
   audio_session_complete = new Audio();
-  // audio.src = "http://remote.address.com/example.mp3";
-  // audio.load();
-  // audio.play();
+
+  //object to pass into workout DB
+  workoutObj = {
+    _user: this.user_id,
+    total_time: 0
+  }
 
   
   ngOnInit() {
@@ -180,7 +190,22 @@ export class TimerComponent implements OnInit {
       this.action = "Session Complete!"
       this.audio_session_complete.play();
       this.running = false;
+      
       clearInterval(this.interval);
+      
+      this.workoutObj.total_time = this.total_time;
+      //if the tabata is finsihed then the total time will be added to the DB and a modal will appear congratualting them.
+      //when the congrats window appears they can click it and it will take them to the results page.
+      this._httpService.workoutInput(this.workoutObj)
+      .then((data) =>{
+        console.log("success putting the workout data in the DB");
+      })
+      .catch((err) =>{
+        console.log(err);
+      })
+
+      //close modal 
+      this.openResults.nativeElement.click();
     }
   }
 

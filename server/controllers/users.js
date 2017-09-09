@@ -25,6 +25,24 @@ module.exports = {
         })
     },
 
+
+    login: function(req, res){
+        // console.log(req.body);
+        User.findOne({email: req.body.email}, function(err, result){
+            if(err){
+                console.log(" there was an error when logging in....", err)
+            }else{
+                if (result == null){
+                    console.log("there was a NULL when logging in, that means that there was never an account in the DB .....", result)
+                    return res.json(result);
+                }
+                else{
+                    console.log("there was not a null, you have registered before!, returning object: ", result)
+                    return res.json(result);
+                }
+            }
+        })
+    },
 }
 
 

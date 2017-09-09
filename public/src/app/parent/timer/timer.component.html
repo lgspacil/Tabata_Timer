@@ -19,3 +19,25 @@
 	
 	<p class="total_time">Total Time: {{shown_total_time}}</p>
 </div>
+
+<button [hidden]="true" type="button" data-toggle="modal" data-target="#results" id="openResults" #openResults></button>
+
+<!-- Modal -->
+<div class="modal fade" id="results" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Login Page</h4>
+        </div>
+        <div class="modal-body">
+		  <h2>Congratulations!!!</h2>
+		  <a class="btn btn-default" role="button" [routerLink]="['/results']" data-dismiss="modal">Results</a>
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>

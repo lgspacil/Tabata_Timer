@@ -1,11 +1,11 @@
 .container{
     background-image: url('/assets/images/weights.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
     height: 800px;
     width: 100%;
     text-align: center;
     padding-top: 118px;
+    background-position: center;
 }
 
 .title{

@@ -13,6 +13,7 @@ import { TimerComponent } from "app/parent/timer/timer.component";
 import { LoginComponent } from './login/login.component';
 import { CookieService } from 'angular2-cookie/services/cookies.service'
 import { HttpService } from "app/http.service";
+import { ResultsComponent } from './results/results.component';
 
 
 
@@ -23,6 +24,7 @@ import { HttpService } from "app/http.service";
     TimerComponent,
     ParentComponent,
     LoginComponent,
+    ResultsComponent,
     
   ],
   imports: [

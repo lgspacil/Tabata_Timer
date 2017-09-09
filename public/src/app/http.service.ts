@@ -12,6 +12,17 @@ export class HttpService {
    return this._http.post("/add_user", registerObj).map(data => data.json()).toPromise()
   }
 
+  userLogin(loginObj){
+    return this._http.post("/login", loginObj).map(data => data.json()).toPromise()
+  }
+
+  workoutInput(workoutObj){
+    return this._http.post('/inputWorkout', workoutObj).map(data => data.json()).toPromise()
+  }
+
+  loadAllWorouts(user_id){
+    return this._http.post('/loadAllWorkouts', {_user: user_id}).map(data => data.json()).toPromise()
+  }
   
 
 }
