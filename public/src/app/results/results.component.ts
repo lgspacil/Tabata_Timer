@@ -26,6 +26,8 @@ export class ResultsComponent implements OnInit {
 
   errors = "";
 
+  load_chart = false;
+
 ///////////////////
 //graph info///////
 ///////////////////
@@ -68,11 +70,7 @@ options = {
 
     .then((data) =>{
       console.log("the workouts I got back are: ", data)
-      
-      this.weight_history = data.weight;
-      this.data.datasets[0].data = data.weight;
-      this.data.labels = data.data_weight;
-
+  
       for(let i = 0; i < data.length; i++){
         if(data[i].total_time < 60){
           data[i].total_time = String(data[i].total_time)
@@ -85,6 +83,7 @@ options = {
         }
       }
       this.workout_list = data;
+      
     })
     .catch((err) =>{
       console.log(err);
@@ -99,6 +98,10 @@ options = {
       console.log("the users data is: ", data)
       this.weight_history = data.weight;
       this.data.datasets[0].data = data.weight;
+      this.data.labels = data.date_weight;
+
+      console.log("the data the chart gets is:, ", this.data.datasets[0].data, " and: ", this.data.labels)
+      this.load_chart = true;
     })
 
     .catch((err) =>{
@@ -108,6 +111,7 @@ options = {
   }
 
   changeWeight(){
+    this.load_chart = false;
     console.log("changeWeight loaded");
     
     if(this.newWeight.weightChange == null){
@@ -128,11 +132,15 @@ options = {
         console.log("the data after chaning the weight is:", data)
         this.weight_history = data.weight;
         this.data.datasets[0].data = data.weight;
-        this.data.labels = data.data_weight;
+        this.data.labels = data.date_weight;
+
+        this.load_chart = true;
+        
   
       })
       .catch((err) =>{
         console.log(err);
+        this.load_chart = true;
         
       })
     }

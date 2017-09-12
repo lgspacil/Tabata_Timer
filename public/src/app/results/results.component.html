@@ -33,7 +33,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2>Current Weight: {{weight_history[weight_history.length - 1]}}lbs</h2>
+          <h2 *ngIf="weight_history">Current Weight: {{weight_history[weight_history.length - 1]}}lbs</h2>
         </div>
         <div class="modal-body">
       <input type="number" name="weightChange" [(ngModel)]="newWeight.weightChange">
@@ -48,6 +48,6 @@
     </div>
   </div>
 
-  <chart [type]="type" [data]="data" [options]="options"></chart>
+  <chart *ngIf="load_chart == true" [type]="type" [data]="data" [options]="options"></chart>
 
 
