@@ -1,6 +1,13 @@
-<div class="container">
-  <h2>Table</h2>
-  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+<app-nav-bar></app-nav-bar>
+
+{{weight_history|json}}
+{{datasets|json}}
+<div class="container" *ngIf="workout_list">
+  <div class="header">
+      <h2>Results</h2>
+      <h2 data-toggle="modal" data-target="#weight" id="openWeight" #openWeight class="weight" *ngIf="weight_history">{{weight_history[weight_history.length - 1]}}lbs</h2>  
+  </div>
+    
   <table class="table">
     <thead>
       <tr>
@@ -8,19 +15,39 @@
         <th>Total Time</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Anna</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Debbie</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>John</td>
-      </tr>
-    </tbody>
+      <tbody>
+        <tr *ngFor="let work of workout_list">
+          <td>{{work.date | date}}</td>
+          <td>{{work.total_time}}</td>
+        </tr>
+      </tbody>
   </table>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="weight" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2>Current Weight: {{weight_history[weight_history.length - 1]}}lbs</h2>
+        </div>
+        <div class="modal-body">
+      <input type="number" name="weightChange" [(ngModel)]="newWeight.weightChange">
+      <input type="submit" value="Change Weight" data-dismiss="modal" (click)="changeWeight()">
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        <div *ngIf="errors" class="errors">{{errors}}</div>
+      </div>
+
+      
+      
+    </div>
+  </div>
+
+  <chart [type]="type" [data]="data" [options]="options"></chart>
+
+

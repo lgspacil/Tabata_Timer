@@ -1,0 +1,16 @@
+.header h2{
+    display: inline-block;
+}
+
+.weight{
+    float: right;
+}
+
+.table{
+    max-height: 200px;
+    overflow: auto;
+}
+
+.errors{
+    color: red;
+}

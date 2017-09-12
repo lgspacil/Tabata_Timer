@@ -43,6 +43,32 @@ module.exports = {
             }
         })
     },
+
+    loadInfo: function(req, res){
+        User.findOne({_id: req.body._user}, function(err, result){
+            if(err){
+                console.log("error getting the users info", err)
+            }else{
+                return res.json(result);
+            }
+        })
+    },
+
+    changeWeight: function(req, res){
+        console.log("!!!!!!!!!!!!", req.body)
+        User.findOne({_id: req.body.user_id}, function(err, user){
+            if(err){
+                console.log("there was an error updating the weight of the user")
+            }else{
+                user.weight.push(req.body.weightChange);
+                user.date_weight.push(req.body.date_weight);
+                user.save(function(err){
+                    if(err){console.log(err)}
+                    else{res.json(user)}
+                })
+            }
+        })
+    }
 }
 
 

@@ -16,7 +16,15 @@ module.exports = function (app){
         users.login(req, res);
     })
 
-    //workours
+    app.post('/loadUserInfo', function(req, res){
+        users.loadInfo(req, res);
+    })
+
+    app.post('/changeWeight', function(req, res){
+        users.changeWeight(req, res);
+    })
+
+    //workouts
     app.post('/inputWorkout', function(req, res){
         workouts.inputWorkout(req, res);
     })

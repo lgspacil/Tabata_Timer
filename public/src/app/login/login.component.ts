@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
 
   loginObj = {
     email:'',
-    name:'',
     password:''
   }
 
@@ -24,7 +23,9 @@ export class LoginComponent implements OnInit {
     email:'',
     name:'',
     password:'',
-    weight:''
+    weight:Number,
+    target_weight:Number,
+    date_weight: ''
   }
 
   errors = '';
@@ -34,6 +35,15 @@ export class LoginComponent implements OnInit {
 
 
   registerUser(){
+
+    let dateObj = new Date();
+    let month = dateObj.getUTCMonth() + 1; //months from 1-12
+    let day = dateObj.getUTCDate();
+    let year = dateObj.getUTCFullYear();
+    
+    let newdate = year + "/" + month + "/" + day;
+    this.registerObj.date_weight = newdate;
+
     this._httpService.registerUser(this.registerObj)
 
     .then((data) =>{
@@ -48,7 +58,7 @@ export class LoginComponent implements OnInit {
 
         this.closeRegister.nativeElement.click();
 
-        this._router.navigate(['/parent']);
+        this._router.navigate(['/home']);
       }
     })
     .catch((err) =>{
@@ -73,7 +83,7 @@ export class LoginComponent implements OnInit {
 
             this.closeLogin.nativeElement.click();
 
-            this._router.navigate(['/parent']);
+            this._router.navigate(['/home']);
         }else{
           this.errors = "Wrong Password!"
         }

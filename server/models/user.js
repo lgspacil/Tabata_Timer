@@ -6,7 +6,9 @@ var UserSchema = new mongoose.Schema({
     name: {type: String},
     password: {type: String},
     _workout: [{type: Schema.Types.ObjectId, ref:'Workouts'}],
-    weight: [{type: Number}]
+    weight: [{type: Number}],
+    date_weight : [{type: String}],
+    target_weight: {type: Number}
 })
 
 var User = mongoose.model('User', UserSchema);

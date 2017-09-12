@@ -23,6 +23,14 @@ export class HttpService {
   loadAllWorouts(user_id){
     return this._http.post('/loadAllWorkouts', {_user: user_id}).map(data => data.json()).toPromise()
   }
+
+  loadUserInfo(user_id){
+    return this._http.post('/loadUserInfo', {_user: user_id}).map(data => data.json()).toPromise()
+  }
+
+  changeWeight(newWeight){
+    return this._http.post('/changeWeight', newWeight).map(data => data.json()).toPromise()
+  }
   
 
 }

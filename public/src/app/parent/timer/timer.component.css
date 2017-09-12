@@ -8,12 +8,13 @@ h2{
   font-size: 43px;
 }
 
- button {
+.pause_start {
   font-size: 30px;
   width: 140px;
   height: 60px;
   border-radius: 5px;
 }
+
 img{
   height: 61px;
 }

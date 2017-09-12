@@ -1,23 +1,44 @@
-<a class="btn btn-default" role="button" [routerLink]="['/results']">Results</a>
-<h1>Welcome {{name}}</h1>
+<div class="container">
 
-<div class="parent_wrapper" >
-
-    <h1 class="header">Time in seconds</h1>
-    <div class="tabata_form">
-        <form *ngIf="show_timer == false">
-            <div class="a">Work: <input type="text" name="work" class="work" [(ngModel)]="form_info.work"></div>
-           <div class="a"> Rest: <input type="text" name="rest" class="rest" [(ngModel)]="form_info.rest"><br></div>
-           <div class="a"> Cycles: <input type="text" name="cycles" class="cycles" [(ngModel)]="form_info.cycles"><br></div>
-            <div class="a">Tabatas: <input type="text" name="tabatas" class="tabatas" [(ngModel)]="form_info.tabatas"><br></div>
-           <div class="a"> Prepare: <input type="text" name="prepare" class="prepare" [(ngModel)]="form_info.prepare"><br></div>
+    <!-- form goes away when the user clicks submit -->
+    <form *ngIf="show_timer == false">
+        <app-nav-bar></app-nav-bar>
+        <div class="timer_box">
+            <div class="form-group row">
+                <label for="example-text-input" class="col-2 col-form-label">Work</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" name="work" [(ngModel)]="form_info.work">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-search-input" class="col-2 col-form-label">Rest</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" name="rest" [(ngModel)]="form_info.rest">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-email-input" class="col-2 col-form-label">Cycles</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" name="cycles"[(ngModel)]="form_info.cycles">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-url-input" class="col-2 col-form-label">Tabatas</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" name="tabatas" [(ngModel)]="form_info.tabatas">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-url-input" class="col-2 col-form-label">Prepare</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" name="prepare" [(ngModel)]="form_info.prepare">
+                </div>
+            </div>
             <input (click)="tabataForm()" value="Submit" class="submit" type="submit">
-        </form>
-    </div>
+        </div>
+    </form>
 
-
-
-
-  <app-timer *ngIf="show_timer == true" [numbers]="form_info" [original]="original_nums" (backButtonClicked)="backButtonClicked($event)"></app-timer>   
+    <app-timer *ngIf="show_timer == true" [numbers]="form_info" [original]="original_nums" (backButtonClicked)="backButtonClicked($event)"></app-timer>   
 
 </div>
+

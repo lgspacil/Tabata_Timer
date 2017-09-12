@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ChartModule } from 'angular2-chartjs';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { CookieService } from 'angular2-cookie/services/cookies.service'
 import { HttpService } from "app/http.service";
 import { ResultsComponent } from './results/results.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 
@@ -25,9 +27,11 @@ import { ResultsComponent } from './results/results.component';
     ParentComponent,
     LoginComponent,
     ResultsComponent,
+    NavBarComponent,
     
   ],
   imports: [
+    ChartModule,
     FormsModule,
     HttpModule,
     BrowserModule,

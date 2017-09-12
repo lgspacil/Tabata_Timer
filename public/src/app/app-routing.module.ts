@@ -6,9 +6,9 @@ import { LoginComponent } from "app/login/login.component";
 import { ResultsComponent } from "app/results/results.component";
 
 const routes: Routes = [
-  {path: 'parent', component: ParentComponent},
   {path: '', component: LoginComponent},
   {path: 'results', component: ResultsComponent},
+  {path: 'home', component: ParentComponent},
 ];
 
 @NgModule({

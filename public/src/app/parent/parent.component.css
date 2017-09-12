@@ -1,18 +1,25 @@
+.container{
+    background-image: url('/assets/images/kettlebell.jpg');
+    background-repeat: no-repeat;
+    height: 800px;
+    width: 100%;
+    background-position: center;
+}
+
 h1{
     text-align: center;
     font-family: Impact, Charcoal, sans-serif;
+    color: white;
+    font-size: 50px;
 }
 
-.tabata_form{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
-    background-color: #222220;
+.timer_box{
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%; 
     color: white;
-    margin-top: 10px;
 }
+
 
 .work{
     background-color: red;
@@ -62,15 +69,6 @@ h1{
     width: 100%;
     text-align: center;
     font-size: 50px;
-}
-
-.a{
-    font-size: 25px;
-    margin: auto;
-    text-align: right;
-    margin-right: 157px;
-    
-
 }
 
 .header{

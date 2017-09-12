@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 
 
 var Workout = mongoose.model('Workout');
+var User = mongoose.model('User');
 
 
 module.exports = {

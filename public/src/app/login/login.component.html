@@ -17,7 +17,6 @@
         </div>
         <div class="modal-body">
           Email: <input type="email" name="name" [(ngModel)]="loginObj.email"><br>
-          Name: <input type="text" name="name" [(ngModel)]="loginObj.name"><br>
           Password: <input type="password" name="password" [(ngModel)]="loginObj.password"><br>
           <input type="submit" value="Submit" (click)="userLogin()">
         </div>
@@ -46,7 +45,8 @@
             Email: <input type="email" name="email" [(ngModel)]="registerObj.email"><br>
             Name: <input type="text" name="name" [(ngModel)]="registerObj.name"><br>
             Password: <input type="password" name="password" [(ngModel)]="registerObj.password"><br>
-            Weight: <input type="text" name="weight" [(ngModel)]="registerObj.weight"><br>
+            Weight: <input type="number" name="weight" [(ngModel)]="registerObj.weight"><br>
+            Target Weight: <input type="number" name="target_weight" [(ngModel)]="registerObj.target_weight"><br>
             <input type="submit" value="Submit" (click)="registerUser()">
           </div>
 
