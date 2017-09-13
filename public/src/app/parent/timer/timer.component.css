@@ -9,10 +9,10 @@ h2{
 }
 
 .pause_start {
-  font-size: 30px;
-  width: 140px;
-  height: 60px;
-  border-radius: 5px;
+  font-size: 2vw;
+  width: 20%;
+  height: 25%;
+  border-radius: 5%;
 }
 
 img{
@@ -22,39 +22,51 @@ img{
 #start{
   background-color: green;
   border-color: green;
+  width: 50%;
+  margin: 0 auto;
 }
 
 #pause{
   background-color: red;
   border-color: red;
+  width: 50%;
+  margin: 0 auto;
 }
 
 
 .container {
   margin: auto;
-  margin-top: 40px;
-  width: 650px;
-  height: 490px;
+  width: 40%;
   text-align: center;
+  color: #B4A6A6;
 }
-#controls {
-  margin-left: 52px;
-  width: 500px;
-  height:70px;
+
+.container h1{
+  font-size: 6vw;
 }
+
 
 #bottom_bar{
   display: inline-block;
+  width: 100%;
   
 }
 #cycles{
   display: inline-block;
-  margin-right: 211px;
-
+  margin-right: 20%;
 }
+
+#cycles h2{
+  font-size: 3vw
+}
+
+
 #tabatas{
-  
   display: inline-block;
+}
+
+#tabatas h2{
+  font-size: 3vw;
 }
 
 .action_banner{
@@ -62,19 +74,25 @@ img{
 }
 
 .workClass{
-  background-color: #EE0E0E;
-  border-radius: 20px;
+  background-color: rgba(238, 14, 14, 0.5);
+  border-radius: 7%;
 }
 
 .restClass{
-  background-color: #4d5aa6;
+  background-color: rgba(38, 51, 126, 0.5);
+  border-radius: 7%;
 }
 
 .prepareClass{
-  background-color: #cfe564
+  background-color: rgba(125, 145, 13, 0.5);
+  border-radius: 7%;
 }
 
 .total_time{
-  font-size: 30px;
-  margin-top: 34px;
+  font-size: 3vw;
+  margin-top: 10%;
+}
+
+.speakers{
+  float: right;
 }

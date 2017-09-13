@@ -7,6 +7,7 @@ import { ResultsComponent } from "app/results/results.component";
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
+  // {path: '', component: ParentComponent},
   {path: 'results', component: ResultsComponent},
   {path: 'home', component: ParentComponent},
 ];

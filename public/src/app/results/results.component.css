@@ -3,7 +3,7 @@
 }
 
 .weight{
-    float: right;
+    text-align: center;
 }
 
 .table{
@@ -12,5 +12,10 @@
 }
 
 .errors{
+    color: red;
+}
+
+.move_right{
+    float: right;
     color: red;
 }

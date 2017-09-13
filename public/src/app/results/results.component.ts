@@ -14,9 +14,11 @@ export class ResultsComponent implements OnInit {
   name = this._cookieService.get('name');
   user_id = this._cookieService.get('user_id');
 
-  workout_list = [];
 
+  workout_list = [];
   weight_history = [];
+  target_weight:number;
+  difference_target_current = null;
 
   newWeight = {
     user_id: this.user_id,
@@ -26,6 +28,7 @@ export class ResultsComponent implements OnInit {
 
   errors = "";
 
+  //should not show the chart initially until we got info back from the DB to populate it
   load_chart = false;
 
 ///////////////////
@@ -82,7 +85,8 @@ options = {
           }
         }
       }
-      this.workout_list = data;
+      
+      this.workout_list = data.reverse();
       
     })
     .catch((err) =>{
@@ -99,8 +103,14 @@ options = {
       this.weight_history = data.weight;
       this.data.datasets[0].data = data.weight;
       this.data.labels = data.date_weight;
+      this.target_weight = data.target_weight;
 
-      console.log("the data the chart gets is:, ", this.data.datasets[0].data, " and: ", this.data.labels)
+      console.log("the target weight is: ", this.target_weight, " your weight now is: ", this.weight_history[this.weight_history.length - 1])
+      console.log("the difference in target weight is: ", Math.abs(this.target_weight - this.weight_history[this.weight_history.length - 1]));
+      this.difference_target_current = Math.abs(this.target_weight - this.weight_history[this.weight_history.length - 1])
+
+
+      //show the chart after the information has been loaded
       this.load_chart = true;
     })
 
@@ -111,6 +121,7 @@ options = {
   }
 
   changeWeight(){
+    //hide the chart for a split second while the charts info can be reloaded
     this.load_chart = false;
     console.log("changeWeight loaded");
     
@@ -129,11 +140,13 @@ options = {
       this._httpService.changeWeight(this.newWeight)
   
       .then((data) =>{
-        console.log("the data after chaning the weight is:", data)
+        console.log("the data after changing the weight is:", data)
         this.weight_history = data.weight;
         this.data.datasets[0].data = data.weight;
         this.data.labels = data.date_weight;
+        this.difference_target_current = Math.abs(this.target_weight - this.weight_history[this.weight_history.length - 1])
 
+        //show the chart again after info has been loaded
         this.load_chart = true;
         
   

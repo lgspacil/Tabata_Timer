@@ -1,12 +1,16 @@
 <app-nav-bar></app-nav-bar>
 
-{{weight_history|json}}
-{{datasets|json}}
+
 <div class="container" *ngIf="workout_list">
+  
+  <h1 data-toggle="modal" data-target="#weight" id="openWeight" #openWeight class="weight" *ngIf="weight_history">{{weight_history[weight_history.length - 1]}}lbs</h1>  
+  <p class="weight">Click on the weight to update your current weight!</p>
+
   <div class="header">
-      <h2>Results</h2>
-      <h2 data-toggle="modal" data-target="#weight" id="openWeight" #openWeight class="weight" *ngIf="weight_history">{{weight_history[weight_history.length - 1]}}lbs</h2>  
+      <h3>{{name}}'s Workout Results</h3>
+      <h4 class="move_right">You are {{difference_target_current}} lbs away from your target weight of {{target_weight}}!</h4>
   </div>
+
     
   <table class="table">
     <thead>

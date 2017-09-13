@@ -21,18 +21,17 @@
 		</div><!--/.container-fluid -->
 	</nav>
 
-
-<img *ngIf="playing == false" src="../assets/images/speaker_off.png" (click)="stop_start_audio()">
-<img *ngIf="playing == true" src="../assets/images/speaker.png" (click)="stop_start_audio()">
-
+<div class="speakers">
+	<img *ngIf="playing == false" src="../assets/images/mute_color.png" (click)="stop_start_audio()">
+	<img *ngIf="playing == true" src="../assets/images/color.png" (click)="stop_start_audio()">
+</div>
 <!-- <h1 class="action_banner">{{action}}</h1> -->
 <div class="container" [class.workClass]="work_screen" [class.restClass]="rest_screen" [class.prepareClass]="prepare_screen">
 	<h1>{{action}}</h1>
 	<h1><b>{{numbers.work}}</b></h1>
-	<div id="controls" align="center">
+	<div id="controls">
 		<button class="pause_start" id= "pause" (click)="startPause()" *ngIf="running == true"><b id="pause">Pause</b></button>
 		<button class="pause_start" id= "start" (click)="startPause()" *ngIf="running == false"><b id="start">Start</b></button>
-		
 	</div>
 
 	<div id="bottom_bar">
