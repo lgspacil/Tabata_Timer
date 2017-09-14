@@ -102,7 +102,7 @@ export class TimerComponent implements OnInit {
 
   decrement(){
     this.interval = setInterval(()=> {
-        this.timer(); },200); 
+        this.timer(); },1000); 
   }
 
   timer(){
