@@ -359,7 +359,7 @@ AppRoutingModule = __decorate([
 /***/ "../../../../../src/app/app.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -542,7 +542,7 @@ var _a;
 /***/ "../../../../../src/app/login/login.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -692,7 +692,7 @@ var _a, _b, _c, _d, _e;
 /***/ "../../../../../src/app/nav-bar/nav-bar.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -753,7 +753,7 @@ NavBarComponent = __decorate([
 /***/ "../../../../../src/app/parent/parent.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -797,7 +797,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ParentComponent = (function () {
     function ParentComponent(_cookieService) {
         this._cookieService = _cookieService;
-        //user info stored in the cookie:
+        // user info stored in the cookie:
         this.name = this._cookieService.get('name');
         this.user_id = this._cookieService.get('user_id');
         this.form_info = {
@@ -807,14 +807,14 @@ var ParentComponent = (function () {
             tabatas: 5,
             prepare: 20
         };
-        //the original seconds of work the user typed in;
+        // the original seconds of work the user typed in;
         this.original_nums = {
             original_work: null,
             original_cycles: null,
             original_rest: null,
             original_tabatas: null,
         };
-        //if show_timer is true we will show the timer page and hide the form
+        // if show_timer is true we will show the timer page and hide the form
         this.show_timer = false;
     }
     ParentComponent.prototype.ngOnInit = function () {
@@ -848,7 +848,7 @@ var _a;
 /***/ "../../../../../src/app/parent/timer/timer.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -1119,7 +1119,7 @@ var _a, _b, _c, _d;
 /***/ "../../../../../src/app/results/results.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 

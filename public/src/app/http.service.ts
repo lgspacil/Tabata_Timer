@@ -9,11 +9,11 @@ export class HttpService {
   constructor(private _http: Http) { }
 
    registerUser(registerObj){
-   return this._http.post("/add_user", registerObj).map(data => data.json()).toPromise()
+   return this._http.post('/add_user', registerObj).map(data => data.json()).toPromise()
   }
 
   userLogin(loginObj){
-    return this._http.post("/login", loginObj).map(data => data.json()).toPromise()
+    return this._http.post('/login', loginObj).map(data => data.json()).toPromise()
   }
 
   workoutInput(workoutObj){
@@ -31,6 +31,6 @@ export class HttpService {
   changeWeight(newWeight){
     return this._http.post('/changeWeight', newWeight).map(data => data.json()).toPromise()
   }
-  
+
 
 }

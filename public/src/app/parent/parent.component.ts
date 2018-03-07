@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CookieService } from "angular2-cookie/services/cookies.service";
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 
 @Component({
@@ -9,12 +9,11 @@ import { CookieService } from "angular2-cookie/services/cookies.service";
 })
 export class ParentComponent implements OnInit {
 
-  //user info stored in the cookie:
+  // user info stored in the cookie:
   name = this._cookieService.get('name');
   user_id = this._cookieService.get('user_id');
 
   constructor(private _cookieService:CookieService) { }
-
 
   form_info = {
     work: 20,
@@ -24,7 +23,7 @@ export class ParentComponent implements OnInit {
     prepare: 20
   }
 
-  //the original seconds of work the user typed in;
+  // the original seconds of work the user typed in;
   original_nums = {
     original_work: null,
     original_cycles: null,
@@ -34,13 +33,13 @@ export class ParentComponent implements OnInit {
   }
 
 
-  //if show_timer is true we will show the timer page and hide the form
+  // if show_timer is true we will show the timer page and hide the form
   show_timer = false;
 
   ngOnInit() {
   }
 
-  tabataForm(){
+  tabataForm() {
     this.original_nums.original_work = this.form_info.work;
     this.original_nums.original_cycles = this.form_info.cycles;
     this.original_nums.original_rest = this.form_info.rest;
@@ -48,7 +47,7 @@ export class ParentComponent implements OnInit {
     this.show_timer = true;
   }
 
-  backButtonClicked(event){
+  backButtonClicked(event) {
     this.show_timer = false;
   }
 

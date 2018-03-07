@@ -10,10 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { ParentComponent } from './parent/parent.component';
-import { TimerComponent } from "app/parent/timer/timer.component";
+import { TimerComponent } from 'app/parent/timer/timer.component';
 import { LoginComponent } from './login/login.component';
 import { CookieService } from 'angular2-cookie/services/cookies.service'
-import { HttpService } from "app/http.service";
+import { HttpService } from 'app/http.service';
 import { ResultsComponent } from './results/results.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
@@ -28,7 +28,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     LoginComponent,
     ResultsComponent,
     NavBarComponent,
-    
+
   ],
   imports: [
     ChartModule,
