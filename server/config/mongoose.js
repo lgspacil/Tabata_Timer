@@ -5,7 +5,8 @@ var fs = require('fs');
 var Schema = mongoose.Schema;
 var path = require('path');
 
-mongoose.connect('mongodb://localhost/tabata_timer');
+// mongoose.connect('mongodb://localhost/tabata_timer');
+mongoose.connect('mongodb://lucas:lucas@ds259768.mlab.com:59768/tabata-timer')
 
 //will look in the models folder and anything that has a js file name it will read
 var models_path = (__dirname + '/../models');
