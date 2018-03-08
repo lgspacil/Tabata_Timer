@@ -510,10 +510,10 @@ var HttpService = (function () {
         this._http = _http;
     }
     HttpService.prototype.registerUser = function (registerObj) {
-        return this._http.post("/add_user", registerObj).map(function (data) { return data.json(); }).toPromise();
+        return this._http.post('/add_user', registerObj).map(function (data) { return data.json(); }).toPromise();
     };
     HttpService.prototype.userLogin = function (loginObj) {
-        return this._http.post("/login", loginObj).map(function (data) { return data.json(); }).toPromise();
+        return this._http.post('/login', loginObj).map(function (data) { return data.json(); }).toPromise();
     };
     HttpService.prototype.workoutInput = function (workoutObj) {
         return this._http.post('/inputWorkout', workoutObj).map(function (data) { return data.json(); }).toPromise();
